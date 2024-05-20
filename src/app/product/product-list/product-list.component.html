@@ -2,8 +2,12 @@
 
   <h2>Our latest collection</h2>
 
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event)">
+  </mat-form-field>
+
   <div fxLayout="row wrap" fxLayoutGap="50px grid">
-    <div *ngFor="let product of products">
+    <div *ngFor="let product of filteredProducts">
       <h2>{{ product.name }}</h2>
       <mat-card class="product-card" (click)="addToCart(product)">
         <img
